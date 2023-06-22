@@ -1,19 +1,19 @@
-import logo from './logo.svg';
-import scissorButton from './images/scissors-button.png';
-import paperButton from './images/paper-button.png';
-import rockButton from './images/rock-button.png';
-import Play from './components/Play';
-import { useState, useEffect } from 'react';
-import './App.css';
+import logo from "./logo.svg";
+import scissorButton from "./images/scissors-button.png";
+import paperButton from "./images/paper-button.png";
+import rockButton from "./images/rock-button.png";
+import Play from "./components/Play";
+import { useState, useEffect } from "react";
+import "./App.css";
 
-let shot = 'rock';
+let shot = "rock";
 let currentRound = 0;
 
 function App() {
-  const [round, setRound] = useState('0');
+  const [round, setRound] = useState("0");
 
   useEffect(() => {
-    console.log(round, '- Has changed');
+    console.log(round, "- Has changed");
   }, [round]);
 
   return (
@@ -40,19 +40,19 @@ function App() {
   );
 
   function rockSelection() {
-    shot = 'rock';
+    shot = "rock";
     currentRound += 1;
     setRound(currentRound);
-    console.log('Button Rock');
+    console.log("Button Rock");
   }
 
   function paperSelection() {
-    shot = 'paper';
+    shot = "paper";
     setRound((currentRound += 1));
   }
 
   function scissorsSelection() {
-    shot = 'scissors';
+    shot = "scissors";
     setRound((currentRound += 1));
   }
 }

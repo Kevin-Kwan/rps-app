@@ -22,8 +22,7 @@
   justify-content: center;
   font-size: calc(2rem + 2vmin);
   color: white;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  margin-bottom: 6rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .App-link {
