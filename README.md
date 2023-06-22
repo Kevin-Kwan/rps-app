@@ -2,4 +2,4 @@
 
 ## Publicis Sapient Internship Week 3
 
-### (Link Will Be Placed Here)
+### Play rock-paper-scissors here: https://reactrps.netlify.app
