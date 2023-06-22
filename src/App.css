@@ -36,3 +36,14 @@
     transform: rotate(0deg);
   }
 }
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button:hover img {
+  transform: scale(
+    1.25
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
