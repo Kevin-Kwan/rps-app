@@ -5,18 +5,29 @@ import rockHandsLeft from '../images/rock-left.png';
 import scissorHandsRight from '../images/scissors-right.png';
 import paperHandsRight from '../images/paper-right.png';
 import rockHandsRight from '../images/rock-right.png';
+import './Play.css';
+
+let win = 0;
+let draw = 0;
+let lose = 0;
 
 function Play(props) {
-  console.log(props.data);
   let yourChoice = props.data;
+  console.log(yourChoice);
   let robotChoice = getRandomChoice();
-  // let result = WinOrLose(yourChoice, robotChoice);
+  console.log(robotChoice);
+  let result = WinOrLose(yourChoice, robotChoice);
   return (
     <div>
-      <img src={require(`../images/${yourChoice}-left.png`)} />
-      <img src={require(`../images/${robotChoice}-right.png`)} />
-      {/* render scoreboard here and pass result? */}
-      {/* im not sure how ruperto wants to do the rendering stuff */}
+      <div>
+        <a>{win}-</a>
+        <a>{draw}-</a>
+        <a>{lose}</a>
+      </div>
+      <div className="result">
+        <img src={require(`../images/${yourChoice}-left.png`)} />
+        <img src={require(`../images/${robotChoice}-right.png`)} />
+      </div>
     </div>
   );
 }
@@ -29,20 +40,22 @@ function WinOrLose(yourChoice, robotChoice) {
   // if yourChoice is passed as a string
   if (randomChoice == yourChoice) {
     result = 'draw';
-  } else if (yourChoice == 'rock') {
-    if (randomChoice == 'paper') {
-      result = 'lose';
-    }
-  } else if (yourChoice == 'paper') {
-    if (randomChoice == 'scissors') {
-      result = 'lose';
-    }
-  } else if (yourChoice == 'scissors') {
-    if (randomChoice == 'rock') {
-      result = 'lose';
-    }
+  } else if (yourChoice == 'rock' && randomChoice == 'paper') {
+    result = 'lose';
+  } else if (yourChoice == 'paper' && randomChoice == 'scissors') {
+    result = 'lose';
+  } else if (yourChoice == 'scissors' && randomChoice == 'rock') {
+    result = 'lose';
   }
-  return result;
+
+  if (result == 'win') {
+    win += 1;
+  } else if (result == 'lose') {
+    lose += 1;
+  } else {
+    draw += 1;
+  }
+  return;
 }
 
 function getRandomChoice() {
@@ -64,12 +77,4 @@ function getRandomChoice() {
   return cpuChoice;
 }
 
-function setDisplay(shot, cpuChoice) {
-  return (
-    <div>
-      <img src="shot var + left link" />
-      <img src="cpu var + right link" />
-    </div>
-  );
-}
 export default Play;
