@@ -1,23 +1,18 @@
 import logo from './logo.svg';
+import scissorButton from './images/scissors-button.png';
+import paperButton from './images/paper-button.png';
+import rockButton from './images/rock-button.png';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={logo} className="App-logo" alt="logo" />
+      <div className="Buttons-container">
+        <img src={rockButton} alt="Scissors Button" />
+        <img src={paperButton} alt="Scissors Button" />
+        <img src={scissorButton} alt="Scissors Button" />
+      </div>
     </div>
   );
 }
