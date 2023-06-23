@@ -36,6 +36,7 @@
   max-height: 30vh;
   margin: 5rem;
   margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
 .Score {
@@ -52,7 +53,7 @@
   .Result-images img {
     max-height: 20vh;
     margin: 5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     margin-top: 1rem;
   }
 }

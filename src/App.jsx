@@ -25,6 +25,7 @@ function App() {
       <div>
         <Play data={shot} />
       </div>
+      <a className="Selection-text">Select Rock, Paper, or Scissors Below</a>
       <div className="Buttons-container">
         <button onClick={rockSelection}>
           <img src={rockButton} alt="Rock Button" />

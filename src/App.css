@@ -38,6 +38,15 @@
   }
 }
 
+.Selection-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(1rem + 1vmin);
+  color: white;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 button {
   border: none;
   background-color: transparent;
