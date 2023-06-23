@@ -28,7 +28,7 @@ function Play(props) {
           <div className="Win-container">
             <img
               src={require(`../images/${yourChoice}-left.png`)}
-              className="win"
+              className="Win"
               alt="Player Result"
             />
             <img
@@ -44,7 +44,7 @@ function Play(props) {
             />
             <img
               src={require(`../images/${robotChoice}-right.png`)}
-              className="lose"
+              className="Lose"
               alt="CPU Result"
             />
           </div>

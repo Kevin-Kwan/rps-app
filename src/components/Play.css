@@ -24,12 +24,12 @@
   place-items: center;
 }
 
-.win {
-  filter: saturate(5);
+.Win {
+  filter: hue-rotate(289deg) saturate(200%) brightness(130%);
 }
 
-.lose {
-  filter: saturate(5);
+.Lose {
+  filter: hue-rotate(180deg) saturate(200%) brightness(100%);
 }
 
 .Result-images img {
