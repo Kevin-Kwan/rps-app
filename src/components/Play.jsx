@@ -10,24 +10,56 @@ import "./Play.css";
 let win = 0;
 let draw = 0;
 let lose = 0;
-let counter = -1;
+let startFlag = false;
 
 function Play(props) {
   let yourChoice = props.data;
-  console.log(yourChoice);
   let robotChoice = getRandomChoice();
-  console.log(robotChoice);
   let result = WinOrLose(yourChoice, robotChoice);
   return (
     <div>
       <div>
-        <a className="score">
+        <a className="Score">
           {win}-{draw}-{lose}
         </a>
       </div>
-      <div className="result">
-        <img src={require(`../images/${yourChoice}-left.png`)} />
-        <img src={require(`../images/${robotChoice}-right.png`)} />
+      <div className="Result-images">
+        {result === "win" ? (
+          <div className="Win-container">
+            <img
+              src={require(`../images/${yourChoice}-left.png`)}
+              className="win"
+              alt="Player Result"
+            />
+            <img
+              src={require(`../images/${robotChoice}-right.png`)}
+              alt="CPU Result"
+            />
+          </div>
+        ) : result === "lose" ? (
+          <div className="Lose-container">
+            <img
+              src={require(`../images/${yourChoice}-left.png`)}
+              alt="Player Result"
+            />
+            <img
+              src={require(`../images/${robotChoice}-right.png`)}
+              className="lose"
+              alt="CPU Result"
+            />
+          </div>
+        ) : (
+          <div className="Draw-container">
+            <img
+              src={require(`../images/${yourChoice}-left.png`)}
+              alt="Player Result"
+            />
+            <img
+              src={require(`../images/${robotChoice}-right.png`)}
+              alt="CPU Result"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -35,12 +67,14 @@ function Play(props) {
 //
 // yeye mb, they used to be returns, but we need else if
 function WinOrLose(yourChoice, robotChoice) {
-  let result = "win";
+  let result = "TBD";
   let randomChoice = robotChoice;
-  counter += 1;
-  if (counter <= 0) {
+
+  if (startFlag !== true) {
+    startFlag = true;
     return;
   }
+  result = "win";
 
   // if yourChoice is passed as a string
   if (randomChoice == yourChoice) {
@@ -60,7 +94,7 @@ function WinOrLose(yourChoice, robotChoice) {
   } else {
     draw += 1;
   }
-  return;
+  return result;
 }
 
 function getRandomChoice() {
