@@ -23,6 +23,7 @@
   font-size: calc(2rem + 2vmin);
   color: white;
   font-family: "Comic Sans MS", cursive, sans-serif;
+  text-decoration: underline;
 }
 
 .App-link {

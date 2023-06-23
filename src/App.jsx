@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
       <div>
-        <header className="App-header">Round: {currentRound}</header>
+        <header className="App-header">Score</header>
       </div>
       <div>
         <Play data={shot} />

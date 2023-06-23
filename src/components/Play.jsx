@@ -19,9 +19,11 @@ function Play(props) {
   return (
     <div>
       <div>
-        <a className="Score">
-          {win}-{draw}-{lose}
-        </a>
+        <div className="Score">
+          <a className="Win-score">{win}</a>
+          <a>-</a>
+          <a className="Lose-score">{lose}</a>
+        </div>
       </div>
       <div className="Result-images">
         {result === "win" ? (
